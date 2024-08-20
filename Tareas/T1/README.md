@@ -18,3 +18,8 @@
     Por ejemplo, si quisieras probar si realizaste correctamente el método crear_plano de Predio, deberás escribir lo siguiente:
 
     `python3 -m unittest -v -b tests_publicos.test_00_crear_plano`
+
+> 19 de agosto
+
+1. Se hace un cambio menor al enunciado, en la subsección __3.2.2 Menu de Acciones__. Para la acción Plantar del menú, se mencionaba ingresar `codigo_cultivo` como _str_, cuando es indiferente el tipo de dato ya que todos los datos ingresados con input() entran como _str_. Se precisa esto para eliminar confusiones en el enunciado de la siguiente forma:
+    > Plantar: (...)Puedes asumir que el usuario ingresará correctamente los datos, es decir, entregará un número entero válido entre 0 y 9 para el parámetro de `codigo_cultivo` y dos números enteros positivos para los parámetros de `alto` y `ancho`. (...)
