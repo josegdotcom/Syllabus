@@ -3,11 +3,17 @@ from os.path import join
 from utilidades import Anime  # Debes utilizar esta nametupled
 
 
-#####################################
-#       Parte 1 - Cargar datos      #
-#####################################
+
 def cargar_animes(ruta_archivo: str) -> list:
-    return "COMPLETAR"
+    carga_an = []
+    with open(ruta_archivo, "r")as ra:
+        rutas_a = ra.readlines()
+        for ruta in rutas_a:
+           ruta = ruta.rstrip().split(",")
+           ruta[5] = ruta[5].split(";"); ruta[1] = int(ruta[1]); ruta[2] = int(ruta[2]); ruta[3] = int(ruta[3]); ruta[5].sort()
+           an = Anime(ruta[0], ruta[1], ruta[2], ruta[3], ruta[4], ruta[5])
+           carga_an.append(an)
+    return carga_an
 
 
 #####################################
@@ -39,7 +45,7 @@ if __name__ == "__main__":
         print(f"{indice} - {anime}")
         indice += 1
 
-    #####################################
+"""    #####################################
     #        Parte 2 - Consultas        #
     #####################################
     # Solo se usará los 2 animes del enunciado.
@@ -80,4 +86,4 @@ if __name__ == "__main__":
         Nippon_Animation=[datos[0]],
         Madhouse=[datos[1]],
     )
-    print(estudios)
+    print(estudios)"""
